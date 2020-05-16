@@ -1,67 +1,151 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>WebGL based transitions on scroll | Codrops</title>
-		<meta name="description" content="WebGL based transitions on scroll" />
-		<link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
-		<meta name="keywords" content="webgl, particles, shader, threejs, javascript, demo, web development" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="favicon.ico" />
-		<link rel="stylesheet" type="text/css" href="css/base.css" />
-		<script>
-			document.documentElement.className = 'js';
-			var supportsCssVars = function() {
-				var e,
-					t = document.createElement('style');
-				return (
-					(t.innerHTML = 'root: { --tmp-var: bold; }'),
-					document.head.appendChild(t),
-					(e = !!(
-						window.CSS &&
-						window.CSS.supports &&
-						window.CSS.supports('font-weight', 'var(--tmp-var)')
-					)),
-					t.parentNode.removeChild(t),
-					e
-				);
-			};
-			supportsCssVars() ||
-				alert('Please view this demo in a modern browser that supports CSS Variables.');
-		</script>
-	</head>
-	<body>
-		<main>
-			<div class="frame">
-				<div class="frame__title-wrap">
-					<h1 class="frame__title">WebGL Transitions on Scroll</h1>
-				</div>
-				<a class="frame__github" href="https://github.com/vaneenige/scroll-transitions-webgl">GitHub</a>
-				<div class="frame__links">
-					<a href="https://tympanus.net/Development/SVGImageHover/">Previous Demo</a>
-					<a href="https://tympanus.net/codrops/?p=38923">Article</a>
-				</div>
-			</div>
-			<div class="content content--canvas">
-				<div class="header">
-					<h1 class="header__title">Phenomenon</h1>
-					<p class="header__text">WebGL based transitions on scroll</p>
-				</div>
-				<div class="heading">
-					A tiny wrapper around three.js built for high-performance WebGL experiences.
-				</div>
-				<div class="heading">
-					GPU based for smooth transitions like scale, rotation and movement.
-				</div>
-				<div class="heading">Modify default geometry and material for infinite possibilities.</div>
-				<div class="heading">That's it, thank you for scrolling! :)</div>
-			</div>
-		</main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WebGL based transitions on scroll | Codrops</title>
+    <meta name="description" content="WebGL based transitions on scroll" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,400"
+      rel="stylesheet"
+    />
+    <!-- UIkit CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/css/uikit.min.css"
+    />
 
-		<script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
-		<script src="https://unpkg.com/three.phenomenon@1.1.0/dist/three.phenomenon.umd.js"></script>
-		<script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
-		<script src="js/bundle.umd.js"></script>
-	</body>
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/js/uikit-icons.min.js"></script>
+
+    <meta
+      name="keywords"
+      content="webgl, particles, shader, threejs, javascript, demo, web development"
+    />
+    <meta name="author" content="Codrops" />
+    <!-- <link rel="shortcut icon" href="favicon.ico" /> -->
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <script>
+      document.documentElement.className = 'js';
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement('style');
+        return (
+          (t.innerHTML = 'root: { --tmp-var: bold; }'),
+          document.head.appendChild(t),
+          (e = !!(
+            window.CSS &&
+            window.CSS.supports &&
+            window.CSS.supports('font-weight', 'var(--tmp-var)')
+          )),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+      supportsCssVars() ||
+        alert(
+          'Please view this demo in a modern browser that supports CSS Variables.'
+        );
+    </script>
+  </head>
+  <body>
+    <main>
+      <div class="frame">
+        <div class="frame__title-wrap">
+          <!-- <h1 class="frame__title">Hi, my name is</h1> -->
+        </div>
+        <a
+          class="frame__github"
+          href="https://octoprofile.now.sh/user?id=Adarshg315"
+          >GitHub</a
+        >
+        <div class="frame__links">
+          <a href="https://medium.com/@adarshgoyal">Medium</a>
+          <a href="https://dev.to/adarshgoyal">DEV</a>
+        </div>
+      </div>
+
+      <div class="content content--canvas">
+        <div class="header">
+          <img
+            style="border-radius: 15%;"
+            width="200px"
+            height="300px"
+            src="src/images/profilepic.png"
+            alt="profilepic"
+          />
+          Hi, my name is
+          <h1 class="header__title">
+            Adarsh Goyal
+          </h1>
+          <p class="header__text">
+            I'm a Student Developer based in India, I build web-apps, and
+            everything in between.
+          </p>
+        </div>
+
+        <div class="heading">
+          <p class="header__text" style="text-align: justify;">
+            Here are a few technologies I've been working with recently:
+          </p>
+          <br />
+
+          <ul class="header__text, a">
+            <a href="#" class="header__text" uk-slidenav-next></a>
+            JavaScript (ES6+)
+            <br />
+            <a href="#" class="header__text" uk-slidenav-next> </a>
+            React.js
+            <br />
+            <a href="#" class="header__text" uk-slidenav-next> </a>
+            Node.js
+            <br />
+            <a href="#" class="header__text" uk-slidenav-next> </a>
+            MongoDB
+            <br />
+            <a href="#" class="header__text" uk-slidenav-next> </a>
+            Express.js
+            <br />
+            <a href="#" class="header__text" uk-slidenav-next> </a>
+            Python
+            <br />
+          </ul>
+        </div>
+        <div class="heading">
+          <h2 style="color: aliceblue;">Founder</h2>
+          <h3 style="color: aliceblue; text-transform: uppercase;">
+            Open-Mind<span style="color: red;">d</span>
+          </h3>
+
+          <a href="https://open-mindd.github.io/my-app/">
+            <img
+              style="border-radius: 100%;"
+              width="200px"
+              height="300px"
+              src="src/images/openmindd.png"
+              alt="open-mindd"
+            />
+          </a>
+        </div>
+        <div class="heading">
+          I ❤️ Open Source <br />project<br />
+          software<br />
+          community<br />
+          organisation<br />
+        </div>
+        <div class="heading">
+          Reach me at <br /><a
+            href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=adarshgoyal@acm.org"
+            >adarshgoyal@acm.org</a
+          >+917828706434
+        </div>
+      </div>
+    </main>
+
+    <script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
+    <script src="https://unpkg.com/three.phenomenon@1.1.0/dist/three.phenomenon.umd.js"></script>
+    <script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
+    <script src="js/bundle.umd.js"></script>
+  </body>
 </html>
